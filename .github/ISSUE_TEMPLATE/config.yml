@@ -2,7 +2,7 @@ blank_issues_enabled: false
 contact_links:
   - name: Security vulnerability or a leaked session key
     url: https://github.com/Funora-Develop/Funora/security/advisories/new
-    about: Report privately. Never open a public issue for this — a session key is your whole account.
+    about: Report privately. Never open a public issue for this - a session key is your whole account.
   - name: Question, idea or design discussion
     url: https://github.com/Funora-Develop/Funora/discussions
     about: The project is in design; most questions belong here rather than in an issue tracker.
