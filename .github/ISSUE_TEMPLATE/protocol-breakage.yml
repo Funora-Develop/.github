@@ -1,0 +1,78 @@
+name: Protocol breakage
+description: FunPay changed its pages and Funora stopped parsing them correctly
+labels: ["type:bug", "area:protocol", "site-change", "priority:P1", "status:needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form when a page that used to work now returns nothing, returns wrong data,
+        or raises `ProtocolChangedError`.
+
+        **Do not attach raw HTML from a signed-in page.** It contains your session, buyer
+        names and message text. Describe what changed, or attach a structurally redacted
+        capture. Never paste a session key — see
+        [SECURITY.md](https://github.com/Funora-Develop/.github/blob/main/SECURITY.md).
+
+  - type: dropdown
+    id: page
+    attributes:
+      label: Which area broke
+      options: [account/session, catalog, market/public offers, own lots, orders, chats, reviews, updates/polling, other]
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser-check
+    attributes:
+      label: Does the same page open normally in a browser, signed in as the same account?
+      description: |
+        This one answer separates "the site changed" from "we are being blocked or
+        challenged", which need completely different fixes. Please actually check.
+      options:
+        - "Yes — the page opens and looks normal"
+        - "No — I see a login page"
+        - "No — I see a captcha or a suspicious-activity page"
+        - "No — I see a block or restriction notice"
+        - "No — something else"
+    validations:
+      required: true
+
+  - type: input
+    id: first-seen
+    attributes:
+      label: When did you first see it (UTC)
+      placeholder: "2026-08-18 04:30 UTC"
+    validations:
+      required: true
+
+  - type: input
+    id: locale
+    attributes:
+      label: Interface language of the account
+      description: The site is localized; a language change alone can break text-based parsing.
+      placeholder: "ru / en"
+    validations:
+      required: true
+
+  - type: textarea
+    id: error
+    attributes:
+      label: Error and sanitized diagnostic
+      description: Fingerprint mismatch details, which selectors were reported missing, error code.
+      render: shell
+    validations:
+      required: true
+
+  - type: textarea
+    id: what-changed
+    attributes:
+      label: What visibly changed on the page, if you can tell
+      description: New layout, a field moved or disappeared, different wording, an extra step.
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: This report contains no session keys, cookies, buyer names or message text.
+          required: true

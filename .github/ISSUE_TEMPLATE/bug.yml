@@ -1,0 +1,70 @@
+name: Bug report
+description: Something in released Funora code behaves incorrectly
+labels: ["type:bug", "status:needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        **Never paste a session key (`golden_key`, `PHPSESSID`), cookies, raw signed-in HTML
+        or private chat contents here.** This issue is public and is mirrored within seconds.
+        If you have already leaked a key, change your FunPay password first, then read
+        [SECURITY.md](https://github.com/Funora-Develop/.github/blob/main/SECURITY.md).
+
+        If the site's markup changed and parsing broke, use the **Protocol breakage** form
+        instead — it is a different problem with a different fix.
+
+  - type: dropdown
+    id: sdk
+    attributes:
+      label: SDK
+      options: [python, javascript, java, dotnet, cpp, c, spec, codegen, conformance, docs, other]
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: Package version, or commit SHA if installed from source.
+      placeholder: "0.1.0 / a1b2c3d"
+    validations:
+      required: true
+
+  - type: input
+    id: runtime
+    attributes:
+      label: OS and runtime
+      placeholder: "Windows 11, Python 3.12.4"
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Minimal reproduction
+      description: The smallest code that shows the problem. Replace any real key with a placeholder.
+      render: python
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected and actual behaviour
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Sanitized logs or traceback
+      description: Remove keys, cookies, order secrets, usernames and message text before pasting.
+      render: shell
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Confirmation
+      options:
+        - label: I have removed all credentials and private message content from this report.
+          required: true
