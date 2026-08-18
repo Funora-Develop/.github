@@ -19,12 +19,12 @@ Closes #
 
 ## Impact
 
-- **Breaking change:** no / yes — describe
+- **Breaking change:** no / yes - describe
 - **Security impact:** none / describe
 - **Rate or traffic impact:** none / describe
 
 ## Code origin
 
 - [ ] This is my own work, or compatible with Apache-2.0, and contains no code copied from a
-      project that does not permit it — including identifiers, selector strings, regular
+      project that does not permit it - including identifiers, selector strings, regular
       expressions and message texts.

@@ -10,7 +10,7 @@ body:
 
         **Do not attach raw HTML from a signed-in page.** It contains your session, buyer
         names and message text. Describe what changed, or attach a structurally redacted
-        capture. Never paste a session key — see
+        capture. Never paste a session key - see
         [SECURITY.md](https://github.com/Funora-Develop/.github/blob/main/SECURITY.md).
 
   - type: dropdown
@@ -29,11 +29,11 @@ body:
         This one answer separates "the site changed" from "we are being blocked or
         challenged", which need completely different fixes. Please actually check.
       options:
-        - "Yes — the page opens and looks normal"
-        - "No — I see a login page"
-        - "No — I see a captcha or a suspicious-activity page"
-        - "No — I see a block or restriction notice"
-        - "No — something else"
+        - "Yes - the page opens and looks normal"
+        - "No - I see a login page"
+        - "No - I see a captcha or a suspicious-activity page"
+        - "No - I see a block or restriction notice"
+        - "No - something else"
     validations:
       required: true
 

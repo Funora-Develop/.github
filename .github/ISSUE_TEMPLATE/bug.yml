@@ -11,7 +11,7 @@ body:
         [SECURITY.md](https://github.com/Funora-Develop/.github/blob/main/SECURITY.md).
 
         If the site's markup changed and parsing broke, use the **Protocol breakage** form
-        instead — it is a different problem with a different fix.
+        instead - it is a different problem with a different fix.
 
   - type: dropdown
     id: sdk
